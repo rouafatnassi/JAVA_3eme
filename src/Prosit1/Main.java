@@ -1,4 +1,4 @@
-package EX1;
+package Prosit1;
 
 import java.util.Scanner;
 
