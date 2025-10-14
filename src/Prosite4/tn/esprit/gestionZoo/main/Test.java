@@ -1,8 +1,7 @@
 package Prosite4.tn.esprit.gestionZoo.main;
 
 
-import Prosite4.tn.esprit.gestionZoo.entites.Animal;
-import Prosite4.tn.esprit.gestionZoo.entites.Zoo;
+import Prosite4.tn.esprit.gestionZoo.entites.*;
 
 public class Test {
     public static void main(String[] args) {
@@ -37,6 +36,32 @@ public class Test {
         Zoo comparer = Zoo.comparerZoo(zoo1, zoo2);
         System.out.println("Le zoo avec le plus d’animaux est : " + comparer);
 
+
+
+
+
+        Aquatic aquatic = new Aquatic();
+        Terrestrial terrestrial = new Terrestrial();
+        Dolphin dolphin = new Dolphin();
+        Penguin penguin = new Penguin();
+
+
+
+        Aquatic aq1 = new Aquatic("Poisson", false, 2, "Nemo", "océan");
+        Terrestrial t1 = new Terrestrial("Chat", true, 3, "Felix", 4);
+        Dolphin d1 = new Dolphin("Dauphin", true, 6, "Flipper", "mer", 20.5f);
+        Penguin p1 = new Penguin("Pingouin", false, 4, "Pingu", "glace", 15.0f);
+
+        System.out.println(aq1);
+        System.out.println(t1);
+        System.out.println(d1);
+        System.out.println(p1);
+
+
+
+        aq1.swim();
+        d1.swim();
+        p1.swim();
 
     }
 }
