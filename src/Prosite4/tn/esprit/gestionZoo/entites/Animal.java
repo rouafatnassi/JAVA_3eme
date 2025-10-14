@@ -13,7 +13,7 @@ public class Animal {
         setAge(age);
         this.name = name;
     }
-
+    public Animal(){}
 
     public String getFamily() {
         return family;
