@@ -40,28 +40,40 @@ public class Test {
 
 
 
-        Aquatic aquatic = new Aquatic();
+        //Aquatic aquatic = new Aquatic();
         Terrestrial terrestrial = new Terrestrial();
         Dolphin dolphin = new Dolphin();
         Penguin penguin = new Penguin();
 
 
 
-        Aquatic aq1 = new Aquatic("Poisson", false, 2, "Nemo", "océan");
+        //Aquatic aq1 = new Aquatic("Poisson", false, 2, "Nemo", "océan");
         Terrestrial t1 = new Terrestrial("Chat", true, 3, "Felix", 4);
         Dolphin d1 = new Dolphin("Dauphin", true, 6, "Flipper", "mer", 20.5f);
         Penguin p1 = new Penguin("Pingouin", false, 4, "Pingu", "glace", 15.0f);
 
-        System.out.println(aq1);
+        //System.out.println(aq1);
         System.out.println(t1);
         System.out.println(d1);
         System.out.println(p1);
 
 
 
-        aq1.swim();
+        //aq1.swim();
         d1.swim();
         p1.swim();
+
+
+
+        //zoo1.addAquaticAnimal(aq1);
+        zoo1.addAquaticAnimal(d1);
+        zoo1.addAquaticAnimal(p1);
+
+        zoo1.AnimalsSwim();
+
+        System.out.println("le profondeur maximale des pingouins : " + zoo1.getMaxPenguinDepth());
+        zoo1.displayNumberOfAquaticTypes();
+
 
     }
 }
