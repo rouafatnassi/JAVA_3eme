@@ -2,11 +2,14 @@ package Prosite4.tn.esprit.gestionZoo.entites;
 
 
 
+import Prosite4.tn.esprit.gestionZoo.Exception.InvalidAgeException;
+import Prosite4.tn.esprit.gestionZoo.Exception.ZooFullException;
+
 import java.util.Arrays;
 
 public class Zoo {
 
-    private static final int NBR_CAGES = 25;
+    private static final int NBR_CAGES = 3;
     private Animal[] animals = new Animal[NBR_CAGES];
     private String name;
     private String city;
@@ -25,7 +28,7 @@ public class Zoo {
 
     public void setName(String name) {
         if (name == null || name.trim().isEmpty()) {
-            System.out.println("⚠️ Le nom du zoo ne doit pas être vide. Valeur par défaut : 'Zoo Inconnu'.");
+            System.out.println(" Le nom du zoo ne doit pas être vide. Valeur par défaut : 'Zoo Inconnu'.");
             this.name = "Zoo Inconnu";
         } else {
             this.name = name;
@@ -45,7 +48,7 @@ public class Zoo {
     }
 
 
-    public boolean addAnimal(Animal a) {
+    /*public boolean addAnimal(Animal a) {
         if (isZooFull()) {
             System.out.println(" Impossible d’ajouter " + a.getName() + " : le zoo est plein !");
             return false;
@@ -59,7 +62,29 @@ public class Zoo {
         animals[animalCount++] = a;
         System.out.println( a.getName() + " ajouté avec succès au zoo " + name);
         return true;
+    }*/
+
+
+    public void addAnimal(Animal a) throws ZooFullException, InvalidAgeException {
+        if (isZooFull()) {
+            throw new ZooFullException("Le zoo est plein, impossible d’ajouter un nouvel animal");
+        }
+
+        if (a.getAge() < 0) {
+            throw new InvalidAgeException("Âge d’animal invalide : l’âge ne peut pas être négatif.");
+        }
+
+        if (searchAnimal(a) != -1) {
+            System.out.println(" L’animal " + a.getName() + " existe déjà dans le zoo !");
+            return;
+        }
+
+        animals[animalCount++] = a;
+        System.out.println( a.getName() + " ajouté avec succès au zoo " + name);
     }
+
+
+
 
     private boolean isZooFull() {
         return animalCount >= NBR_CAGES;

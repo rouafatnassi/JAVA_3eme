@@ -36,12 +36,7 @@ public class Animal {
     }
 
     public void setAge(int age) {
-        if (age < 0) {
-            System.out.println(" L’âge ne peut pas être négatif");
-            this.age = 0;
-        } else {
-            this.age = age;
-        }
+        this.age = age;
     }
 
     public boolean isMammal() {
