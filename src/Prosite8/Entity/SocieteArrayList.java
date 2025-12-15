@@ -46,7 +46,7 @@ public class SocieteArrayList  implements IGestion<Employe>, IRechercheAvancee<E
 
     @Override
     public void trierEmployeParId() {
-        Collections.sort(listeEmployes); // Utilise compareTo (id)
+        Collections.sort(listeEmployes); 
     }
 
     @Override
